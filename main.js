@@ -1,7 +1,7 @@
 let dateArr = [],
     nameArr = [];
 
-if (localStorage.getItem("times") !== undefined) {
+if (localStorage.getItem("times") !== null) {
   dateArr = localStorage.getItem("times").split("spl");
   nameArr = localStorage.getItem("names").split("\u0000");
 }
@@ -53,10 +53,10 @@ function storeArrays() {
 
 function get(selector) {
   if (selector.startsWith("#")) {
-    return document.getElementById(selector.subString(1));
+    return document.getElementById(selector.substring(1));
   }
   else if (selector.startsWith(".")) {
-    return document.getElementsByClassName(selector.subString(1));
+    return document.getElementsByClassName(selector.substring(1));
   }
   else {
     return document.getElementsByTagName(selector);
