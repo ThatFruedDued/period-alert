@@ -7,6 +7,8 @@ if (localStorage.getItem("times") !== null) {
 }
 
 get("#add").addEventListener("click", e => {
+  period();
+    
   function type() {
     let result = window.prompt("Period or Event?");
     if (result.toLowerCase() === "period") {
